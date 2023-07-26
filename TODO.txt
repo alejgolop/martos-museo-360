@@ -1,0 +1,10 @@
+Limpiar assets innecesarios OK
+js Uglify + Minify OK
+    pano-app.js
+    pano-graph.js
+
+css Minify OK
+    main.css
+    fab.css
+
+OJO resolución imágenes

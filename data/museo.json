@@ -1,0 +1,237 @@
+{
+  "mediaOrigin": "data/media/panorama_museo/",
+  "panoramas": [
+    {
+      "id": "puerta2",
+      "source": "puerta2.JPG",
+      "initialLookAt": [4895.51, 419.09, -890.77],
+      "infoSpots": [
+        {
+            "title":{
+                "es":"Casa de Artes y Oficios",
+                "en":""
+            },
+            "image":"",
+            "point":[3659.11, 4.69, -3402.01],
+            "brief":{
+                "es":[
+"Casa de Artes y Oficios es un edificio singular del Patrimonio Histórico de Martos. Se trata de una casa-palacio, de estilo historicista, construida en 1896.",
+"En la segunda mitad del siglo XIX la calle Albollón se convirtio en un importante eje urbanistico de la expansión de Martos, donde familias acomodadas trasladaron su residencia, construyendo casas-palacio cuyas fachadas rivalizaban en dimensiones, belleza, originalidad, lujo y modernidad.",
+"La fachada nos llama la atención por su monumentalidad y por el gran número de huecos, protegidos por una rica rejería. Destaca el chaflán redondeado que forma la esquina entre el Albollón y la calle Bahondillo, en el que encontramos un bello mirador de hierro y cristal.",
+"La puerta de entrada merece especial atención. Es de madera, tallada con gran variedad de motivos ornamentales, con un montante de hierro y cristal que posibilita la entrada de luz al zaguán. Desde este accedemos al patio interior, concebido como el centro de la casa. Destaca su espectacular cubierta de hierro y cristal, decorada con delicados motivos historicistas: cuatro delgadas columnas con capitel compuesto sostienen arcos escarzanos cuyas enjutas se decoran con grutescos. Estos sostienen, a su vez, la galería superior, que se abre al patio a través de balcones y sobre ellos la cubierta acristalada. El vidrio polícromo juega un papel decorativo importante, creando una atmósfera relajada y sugerente.",
+"Del patio surge la escalera principal, luminosa y diáfana, decorada con relieves y protegida con una baranda de hierro y pasarnanos de madera.",
+"En esta casa se ubicó, entre los años cincuenta y los ochenta del siglo XX, el Centro de Formación Profesional 'San Felipe Neri', de donde le viene el nombre con el que se conoce tradicionalmente, Casa de Artes y Oficios.",
+"Desde 2010, tras su restauración, la casa alberga dependencias municipales. En 2023 empieza una nueva etapa con la colección museográfica que abre el camino a un museo de la ciudad. "
+                ],
+                "en":[]
+            },
+            "media":[]
+        }
+
+      ],
+      "links": [
+        { "destination": "pasilloentrada", "point": [4895.51, 419.09, -890.77] }
+      ]
+    },
+    {
+      "id": "pasilloentrada",
+      "source": "pasilloentrada.JPG",
+      "initialLookAt": [4911.54, -712.27, 568.08],
+      "infoSpots": [],
+      "links": [
+        { "destination": "salonbajo2", "point": [4946.82, -421.61, 564.91] },
+        { "destination": "puerta2", "point": [-4939.26, -605.38, -383.61] }
+      ]
+    },
+    {
+      "id": "salonbajo2",
+      "source": "salonbajo2.JPG",
+      "initialLookAt": [3367.7, -143.26, 3685.73],
+      "infoSpots": [],
+      "links": [
+        { "destination": "escalera", "point": [232.38, 575.98, 4950.67] },
+        {"destination": "pasilloentrada", "point": [-4912.34, -784.69, -488.56]},
+        {"destination": "salasotano1", "point": [3546.70, -28.68, 3513.08]}
+
+
+        
+      ]
+    },
+    {
+      "id": "escalera",
+      "source": "escalera.JPG",
+      "initialLookAt": [-4781.11, 1070.96, 954.19],
+      "infoSpots": [],
+      "links": [
+        { "destination": "entradasala", "point": [-4781.11, 1070.96, 954.19] },
+        { "destination": "salonbajo2", "point": [-4656.55, -1697.48, -597.05] }
+      ]
+    },
+    {
+      "id": "entradasala",
+      "source": "entradasala.JPG",
+      "initialLookAt": [4969.28, -142.74, 479.2],
+      "infoSpots": [],
+      "links": [
+        { "destination": "sala1", "point": [4969.28, -142.74, 479.2] },
+        { "destination": "escalera", "point": [3429.69, -1101.49, -3455.05] },
+        {
+          "destination": "pasillopiso1_2",
+          "point": [-4964.7, -213.29, -513.59]
+        }
+      ]
+    },
+    {
+      "id": "sala1",
+      "source": "sala1.JPG",
+      "initialLookAt": [3551.66, -553.43, 3461.02],
+      "infoSpots": [],
+      "links": [
+        {
+          "destination": "entradasala",
+          "point": [-4551.77, -144.82, -2052.48]
+        },
+        { "destination": "sala2", "point": [-129.02, -903.48, 4907.55] }
+      ]
+    },
+    {
+      "id": "sala2",
+      "source": "sala2.JPG",
+      "initialLookAt": [94.11, -968.56, 4896.44],
+      "infoSpots": [],
+      "links": [
+        { "destination": "sala3", "point": [60.95, -755.53, 4938.4] },
+        { "destination": "sala1", "point": [-4403.57, -249.02, 2334.34] }
+      ]
+    },
+    {
+      "id": "sala3",
+      "source": "sala3.JPG",
+      "initialLookAt": [4932.52, -748.15, 189.77],
+      "infoSpots": [],
+      "links": [
+        { "destination": "sala2", "point": [-4874.12, -1048.89, -215.07] },
+        { "destination": "sala4", "point": [4835.7, -1243.22, 89.98] }
+      ]
+    },
+    {
+      "id": "sala4",
+      "source": "sala4.JPG",
+      "initialLookAt": [4975.76, -119.06, -373.18],
+      "infoSpots": [],
+      "links": [
+        { "destination": "sala5", "point": [4865.82, -617.48, -928.36] },
+        { "destination": "sala3", "point": [-4898.32, -608.99, 729.56] }
+      ]
+    },
+    {
+      "id": "sala5",
+      "source": "sala5.JPG",
+      "initialLookAt": [],
+      "infoSpots": [],
+      "links": [
+        { "destination": "sala4", "point": [-4974.47, -290.15, -269.65] },
+        { "destination": "sala6", "point": [4700.43, -453.17, 1624.96] }
+      ]
+    },
+    {
+      "id": "sala6",
+      "source": "sala6.JPG",
+      "initialLookAt": [1250.03, -340.43, 4820.51],
+      "infoSpots": [],
+      "links": [
+        { "destination": "sala5", "point": [-4890.74, -510.2, -852.1] },
+        { "destination": "sala7", "point": [-727.36, -408.5, 4922.66] }
+      ]
+    },
+    {
+      "id": "sala7",
+      "source": "sala7.JPG",
+      "initialLookAt": [4989.05, -52.99, 169.21],
+      "infoSpots": [],
+      "links": [
+        { "destination": "sala6", "point": [-4806.59, -1062.51, -821.9] },
+        { "destination": "sala8", "point": [4941.15, -661.59, 220.7] }
+      ]
+    },
+    {
+      "id": "sala8",
+      "source": "sala8.JPG",
+      "initialLookAt": [],
+      "infoSpots": [],
+      "links": [
+        { "destination": "sala7", "point": [-4912.13, -901.95, 47.45] },
+        { "destination": "sala9", "point": [4767.85, -981.19, -1107.91] }
+      ]
+    },
+    {
+      "id": "sala9",
+      "source": "sala9.JPG",
+      "initialLookAt": [-3969.0, -430.69, 3001.21],
+      "infoSpots": [],
+      "links": [
+        { "destination": "pasillopiso1", "point": [-680.9, -496.8, 4919.45] },
+        { "destination": "sala8", "point": [-4942.39, -528.23, -498.16] }
+      ]
+    },
+    {
+      "id": "pasillopiso1",
+      "source": "pasillopiso1.JPG",
+      "initialLookAt": [-4941.31, -654.77, 215.31],
+      "infoSpots": [],
+      "links": [
+        {
+          "destination": "pasillopiso1_2",
+          "point": [217.86, -161.88, 4982.22]
+        },
+        { "destination": "sala9", "point": [-4943.52, -643.03, 217.39] }
+      ]
+    },
+    {
+      "id": "pasillopiso1_2",
+      "source": "pasillopiso1_2.JPG",
+      "initialLookAt": [-4570.22, -317.19, -1992.46],
+      "infoSpots": [],
+      "links": [
+        { "destination": "entradasala", "point": [-523.87, -414.97, -4954.12] },
+        { "destination": "pasillopiso1", "point": [-4965.97, -300.85, 423.72] }
+      ]
+    },
+    {
+      "id": "salasotano1",
+      "source": "salasotano1.JPG",
+      "initialLookAt": [4976.27, -123.21, 360.46],
+      "infoSpots": [],
+      "links": [
+
+        { "destination": "salonbajo2", "point": [-4519.71, -718.53, 2008.22] },
+        { "destination": "salasotano2", "point": [-899.16, -767.79, -4852.46] }
+
+      ]
+    },
+    {
+      "id": "salasotano2",
+      "source": "salasotano2.JPG",
+      "initialLookAt": [4779.88, -268.29, 1412.61],
+      "infoSpots": [],
+      "links": [
+        { "destination": "salasotano3", "point": [4929.12, -745.99, 259.51] },
+        { "destination": "salasotano1", "point": [-4878.45, -1052.48, -118.77] }
+        
+
+
+      ]
+    },
+    {
+      "id": "salasotano3",
+      "source": "salasotano3.JPG",
+      "initialLookAt": [4876.40, -763.61, 751.11],
+      "infoSpots": [],
+      "links": [
+        { "destination": "salasotano2", "point": [-4582.94, -804.79, 1809.97] }
+        
+
+      ]
+    }
+  ]
+}
