@@ -43,7 +43,7 @@ initView();
 
 
 function openInfoModal() {
-  console.log("Opening Info Modal");
+  //console.log("Opening Info Modal");
 
   $(".swiper-wrapper").empty();
   swiper?.destroy();

@@ -4,13 +4,14 @@ var viewer = new PANOLENS.Viewer({
   output: "console",
   controlButtons: ["fullscreen"],
 });
-var panoRaw=[];
+var panoRaw = [];
 var panoMap = new Map();
 var infoSpotData = new Map();
 var swiper = undefined;
 var control = PANOLENS.CONTROLS.ORBIT;
 var isAMobileDevice = false;
 var hasPermToSensors = false;
+var lastPanorama = undefined;
 
 // Default Icons
 var eyeImage =
@@ -30,13 +31,14 @@ function makePanoGraph(pano_data) {
 
 // This builds panorama graph, with portals and info spots
 function proccessPanoramas(panoramas) {
-  panoRaw=panoramas;
+  panoRaw = panoramas;
   panoMap.clear();
   infoSpotData.clear();
 
   // Load Each Panorama
   panoramas.forEach((panorama) => {
     var panoObject = createImagePanorama(mediaOrigin + panorama.source);
+
     viewer.add(panoObject);
     panoMap.set(panorama.id, panoObject);
 
@@ -46,7 +48,7 @@ function proccessPanoramas(panoramas) {
       if (spot.brief[language.code].length > 1) {
         spotId = uuid();
 
-        spot["id"]=spotId;
+        spot["id"] = spotId;
 
         const infoSpotObject = createInfoSpot(
           new THREE.Vector3(...spot.point),
@@ -61,19 +63,23 @@ function proccessPanoramas(panoramas) {
     });
 
     // Apply initial Look At, if defined
-    if (panorama.initialLookAt.length > 1) {
+    /*  if (panorama.initialLookAt.length > 1) {
       initialLookAt(panoObject, new THREE.Vector3(...panorama.initialLookAt));
-    }
+    } */
+
+    setLookAts(panoObject, panorama);
   });
 
   // Make Links between Panoramas
   panoramas.forEach((panorama) => {
     panorama.links.forEach((link) => {
-      linkPanoramas(
-        panoMap.get(panorama.id),
-        panoMap.get(link.destination),
-        new THREE.Vector3(...link.point)
-      );
+      if (link.point.length > 0) {
+        linkPanoramas(
+          panoMap.get(panorama.id),
+          panoMap.get(link.destination),
+          new THREE.Vector3(...link.point)
+        );
+      }
     });
   });
 
@@ -89,39 +95,30 @@ function proccessPanoramas(panoramas) {
   }
 }
 
-function translateInfoSpots()
-{
+function translateInfoSpots() {
   for (let [key, value] of infoSpotData) {
-      console.log(key);
+    console.log(key);
 
-      var done=false;
-      for(var i=0;i<panoRaw.length;i++)
-      {
-        for(var j=0;j<panoRaw[i].infoSpots.length;j++)
-        {
-          if(panoRaw[i].infoSpots[j].id==key)
-          {
-            infoSpotData.get(key).spotObject.setText(panoRaw[i].infoSpots[j].title[language.code]);
-            break;
-          }
-        }
-        if(done)
-        {
+    var done = false;
+    for (var i = 0; i < panoRaw.length; i++) {
+      for (var j = 0; j < panoRaw[i].infoSpots.length; j++) {
+        if (panoRaw[i].infoSpots[j].id == key) {
+          infoSpotData
+            .get(key)
+            .spotObject.setText(panoRaw[i].infoSpots[j].title[language.code]);
           break;
         }
       }
-
-
-
-      
+      if (done) {
+        break;
+      }
     }
+  }
 }
 
-function goToStartingPanorama()
-{
-  viewer.setPanorama( panoMap.get(panoRaw[0].id));
+function goToStartingPanorama() {
+  viewer.setPanorama(panoMap.get(panoRaw[0].id));
 }
-
 
 // Focus tweening parameter
 var parameters = {
@@ -182,6 +179,32 @@ function initialLookAt(panorama, vector) {
   panorama.removeEventListener("enter-fade-start");
   panorama.addEventListener("enter-fade-start", function () {
     viewer.tweenControlCenter(vector, 0);
+  });
+}
+
+//Sets Look at with links!
+function setLookAts(panoObject, panorama) {
+  panoObject.removeEventListener("enter-fade-start");
+  panoObject.addEventListener("enter-fade-start", function () {
+    if (panorama.lookAts) {
+      //console.log(lastPanorama);
+      var vector;
+      var comeFrom = panorama.lookAts.find((look) => look.origin === lastPanorama);
+      
+      if(comeFrom)
+      {
+        vector=comeFrom.look;
+      }else if (panorama.initialLookAt.length > 0){
+        vector = panorama.initialLookAt;
+      }
+
+      //console.log(vector);
+      viewer.tweenControlCenter(new THREE.Vector3(...vector), 0);
+    } else if (panorama.initialLookAt.length > 0) {
+      viewer.tweenControlCenter(new THREE.Vector3(...panorama.initialLookAt), 0);
+    }
+    lastPanorama=panorama.id;
+    console.log(`Moving to Panorama: ${lastPanorama}`);
   });
 }
 
@@ -265,7 +288,10 @@ function openSpotModal(spotId) {
     });
   }
 
-  $("#poi-title-img").attr("src", spotObject.image.length>0?mediaOrigin + spotObject.image:eyeImage);
+  $("#poi-title-img").attr(
+    "src",
+    spotObject.image.length > 0 ? mediaOrigin + spotObject.image : eyeImage
+  );
   $("#poi-title").text(spotObject.title[language.code]);
 
   $("#poi-body").empty();
