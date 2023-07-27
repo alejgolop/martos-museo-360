@@ -117,6 +117,11 @@ function translateInfoSpots()
     }
 }
 
+function goToStartingPanorama()
+{
+  viewer.setPanorama( panoMap.get(panoRaw[0].id));
+}
+
 
 // Focus tweening parameter
 var parameters = {

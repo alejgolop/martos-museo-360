@@ -9,6 +9,7 @@ const langStrings = {
     "static-view": "Activar Visualización Estática",
     "dinamic-view": "Activar Visualización Dinámica",
     info: "Información",
+    restart: "Volver al Inicio",
     confirmation: "Hecho",
     acknowledge: "Entendido",
     image: "Imagen",
@@ -24,6 +25,7 @@ const langStrings = {
     "static-view": "Enable Static View",
     "dinamic-view": "Enable Dinamic View",
     info: "Info",
+    restart: "Restart position",
     confirmation: "Done",
     acknowledge: "OK",
     image: "Image",
@@ -56,6 +58,7 @@ function changeLang(code) {
   $("#chooseLang-btn").attr("title", langStrings[language.code]["lang-title"]);
 
   $("#info-btn").attr("title", langStrings[language.code]["info"]);
+  $("#restart-btn").attr("title", langStrings[language.code]["restart"]);
   $("#normal-mode-btn").attr("title", langStrings[language.code]["static-view"]);
   $("#sensor-mode-btn").attr("title", langStrings[language.code]["dinamic-view"]);
 

@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="lib/swipper/swiper-bundle.min.css" />
     <script src="lib/threejs/three.min.js"></script>
     <script src="lib/panolens/panolens.min.js"></script>
-    <link rel='stylesheet' type='text/css' media='screen' href='css/fab.min.css'>
-    <link rel='stylesheet' type='text/css' media='screen' href='css/main.min.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/fab.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
     
 </head>
 <body>
@@ -21,6 +21,9 @@
       <!-- buttons will go here -->
       <button id="info-btn" class="btn btn-primary fab" onclick="openInfoModal()" title="Información" aria-label="Información">
         <img aria-hidden="true" src="assets/info-btn.svg" width="32" height="32" />
+      </button>
+      <button id="restart-btn" class="btn btn-primary fab" onclick="goToStartingPanorama()" title="Inicio" aria-label="Inicio">
+        <img aria-hidden="true" src="assets/restart-btn.svg" width="32" height="32" />
       </button>
       <button id="normal-mode-btn"  class="btn btn-primary fab" title="Activar Visualización Estática" aria-label="Activar Visualización Estática">
         <img aria-hidden="true" src="assets/touchpad_mouse.svg" width="32" height="32" />
@@ -89,9 +92,9 @@
     <script src="lib/bootstrap-5.0.1/js/bootstrap.bundle.min.js"></script>
     <script src="lib/swal2/sweetalert-2.11.js"></script>
     <script src="lib/swipper/swiper-bundle.min.js"></script>
-    <script src='js/pano-graph.min.js'></script>
-    <script src='js/translate-ui.min.js'></script>
-    <script src='js/pano-app.min.js'></script>
-    <script src='js/loaders/startup-graph.min.js'></script>
+    <script src='js/pano-graph.js'></script>
+    <script src='js/translate-ui.js'></script>
+    <script src='js/pano-app.js'></script>
+    <script src='js/loaders/startup-graph.js'></script>
 </body>
 </html>
