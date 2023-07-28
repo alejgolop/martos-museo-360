@@ -122,3 +122,9 @@ body {
 .attrib-img{
   width:50%;
 }
+
+.testing {
+  position: fixed;
+    left: 5px;
+    color:white;
+}

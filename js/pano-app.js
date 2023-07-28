@@ -1,3 +1,10 @@
+addEventListener( 'deviceorientation', (event)=>{
+  console.log(event)
+  $(".testing").text(`A:${event.alpha} B:${event.alpha} G:${event.gamma} c:${JSON.stringify(viewer.camera.rotation)}`)
+
+}
+  );
+
 function initView() {
 
 
