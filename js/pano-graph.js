@@ -2,7 +2,8 @@
 var mediaOrigin = undefined;
 var viewer = new PANOLENS.Viewer({
   output: "console",
-  controlButtons: ["fullscreen"]
+  controlButtons: ["fullscreen"],
+  autoHideInfospot:false
 });
 var panoRaw = [];
 var panoMap = new Map();

@@ -70,3 +70,46 @@ function openInfoModal() {
   $("#modal-poi").modal("show");
 }
 
+/*
+var loader = new THREE.TextureLoader();
+
+// Load an image file into a custom material
+var material = new THREE.MeshLambertMaterial({
+  map: loader.load('https://s3.amazonaws.com/duhaime/blog/tsne-webgl/assets/cat.jpg')
+});
+
+material.side = THREE.DoubleSide;
+material.transparent = true;
+material.opacity = 1;
+
+// create a plane geometry for the image with a width of 10
+// and a height that preserves the image's aspect ratio
+var geometry = new THREE.PlaneGeometry(100, 100);
+
+
+// combine our image geometry and material into a mesh
+var mesh = new THREE.Mesh(geometry, material);
+
+// set the position of the image mesh in the x,y,z dimensions
+
+mesh.scale.set(10,  10, 1)
+
+mesh.lookAt(viewer.camera.position);
+mesh.frustumCulled=false;
+mesh.renderOrder = 0;
+
+// add the image to the scene
+//viewer.scene.add(mesh);
+
+viewer.panorama.add(mesh);
+mesh.position.set(-4466.25*0.9, 668.75*0.9, -2126.97*0.9);
+mesh.lookAt(viewer.camera.position);
+
+
+var light = new THREE.PointLight( 0xffffff, 1, 0 );
+
+// Specify the light's position
+light.position.set(1, 1, 10 );
+
+viewer.scene.add(light)
+*/
