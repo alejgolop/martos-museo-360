@@ -154,7 +154,11 @@ function onFocus() {
 
 // Callbacks for showing/hiding texts
 function displayText(event) {
-  event.target.element.style.display = "block";
+  if(viewer.control instanceof OrbitControls)
+  {
+    event.target.element.style.display = "block";
+  }
+  
 }
 
 function hideTexts() {
