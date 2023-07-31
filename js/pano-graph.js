@@ -3,7 +3,7 @@ var mediaOrigin = undefined;
 var viewer = new PANOLENS.Viewer({
   output: "console",
   controlButtons: ["fullscreen"],
-  autoHideInfospot:false
+  autoHideInfospot: false,
 });
 var panoRaw = [];
 var panoMap = new Map();
@@ -20,6 +20,8 @@ var eyeImage =
 var walkImage =
   "data:image/png;base64,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";
 
+var spotTest;
+
 // This fetch project's data from .json
 function makePanoGraph(pano_data) {
   fetch(pano_data)
@@ -27,6 +29,23 @@ function makePanoGraph(pano_data) {
     .then((panoramaData) => {
       mediaOrigin = panoramaData.mediaOrigin;
       proccessPanoramas(panoramaData.panoramas);
+
+     
+
+      /* 
+       //TEST
+      var light = new THREE.PointLight(0xffffff, 1, 0);
+      // Specify the light's position
+      light.position.set(0, 0, 0);
+      viewer.scene.add(light);
+
+      var newSpot = new PANOLENS.Spot(3.5, eyeImage);
+      spotTest = newSpot;
+      newSpot.addHoverText("Hola!");
+      newSpot.addEventListener("click", displayText);
+      viewer.panorama.add(newSpot);
+      newSpot.position.set(4466.25 * -0.9, 668.75 * 0.9, -2126.97 * 0.9);
+      newSpot.lookAt(viewer.camera.position); */
     });
 }
 
@@ -51,22 +70,18 @@ function proccessPanoramas(panoramas) {
 
         spot["id"] = spotId;
 
-        const infoSpotObject = createInfoSpot(
+        const infoSpotObject = createSpot(
           new THREE.Vector3(...spot.point),
           spot.title[language.code],
           spotId,
           spot.image.length > 1 ? mediaOrigin + spot.image : undefined
         );
         panoObject.add(infoSpotObject);
+        infoSpotObject.lookAt(viewer.camera.position);
         spot["spotObject"] = infoSpotObject;
         infoSpotData.set(spotId, spot);
       }
     });
-
-    // Apply initial Look At, if defined
-    /*  if (panorama.initialLookAt.length > 1) {
-      initialLookAt(panoObject, new THREE.Vector3(...panorama.initialLookAt));
-    } */
 
     setLookAts(panoObject, panorama);
   });
@@ -190,21 +205,25 @@ function setLookAts(panoObject, panorama) {
     if (panorama.lookAts) {
       //console.log(lastPanorama);
       var vector;
-      var comeFrom = panorama.lookAts.find((look) => look.origin === lastPanorama);
-      
-      if(comeFrom)
-      {
-        vector=comeFrom.look;
-      }else if (panorama.initialLookAt.length > 0){
+      var comeFrom = panorama.lookAts.find(
+        (look) => look.origin === lastPanorama
+      );
+
+      if (comeFrom) {
+        vector = comeFrom.look;
+      } else if (panorama.initialLookAt.length > 0) {
         vector = panorama.initialLookAt;
       }
 
       //console.log(vector);
       viewer.tweenControlCenter(new THREE.Vector3(...vector), 0);
     } else if (panorama.initialLookAt.length > 0) {
-      viewer.tweenControlCenter(new THREE.Vector3(...panorama.initialLookAt), 0);
+      viewer.tweenControlCenter(
+        new THREE.Vector3(...panorama.initialLookAt),
+        0
+      );
     }
-    lastPanorama=panorama.id;
+    lastPanorama = panorama.id;
     console.log(`Moving to Panorama: ${lastPanorama}`);
   });
 }
@@ -230,9 +249,32 @@ function createInfoSpot(vector, text, spotId, imgSrc = undefined) {
   return spot;
 }
 
+// This creates a new Info Spot to be added to a panorama
+function createSpot(vector, text, spotId, imgSrc = undefined) {
+  var spot = new PANOLENS.Spot(3.5, imgSrc ? imgSrc : eyeImage);
+  vector = vector.multiplyScalar(0.9);
+  vector.x *= -1;
+  spot.position.copy(vector);
+  spot.addHoverText(text);
+
+  if (!isMobile()) {
+    spot.addEventListener("click", onFocus);
+  }
+
+  if (spotId) {
+    spot.addEventListener("click", () => {
+      openSpotModal(spotId);
+    });
+  } else {
+    spot.addEventListener("click", displayText);
+  }
+
+  return spot;
+}
+
 // This creates a link (portal) between 2 panoramas
 function linkPanoramas(origin, destination, vector) {
-  origin.link(destination, vector, 400, walkImage);
+  origin.link(destination, vector, 3.5, walkImage);
 }
 
 // Callback for building and showing an Info Spot Modal

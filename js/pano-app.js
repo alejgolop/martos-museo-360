@@ -1,9 +1,4 @@
-addEventListener( 'deviceorientation', (event)=>{
-  console.log(event)
-  $(".testing").text(`A:${event.alpha} B:${event.alpha} G:${event.gamma} c:${JSON.stringify(viewer.camera.rotation)}`)
 
-}
-  );
 
 function initView() {
 
@@ -112,4 +107,36 @@ var light = new THREE.PointLight( 0xffffff, 1, 0 );
 light.position.set(1, 1, 10 );
 
 viewer.scene.add(light)
+*/
+
+/*
+var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+
+material.side = THREE.DoubleSide;
+material.transparent = true;
+material.opacity = 1;
+
+// create a plane geometry for the image with a width of 10
+// and a height that preserves the image's aspect ratio
+var geometry = new THREE.PlaneGeometry(100, 100);
+
+
+// combine our image geometry and material into a mesh
+var mesh = new THREE.Mesh(geometry, material);
+
+// set the position of the image mesh in the x,y,z dimensions
+
+mesh.scale.set(10,  10, 1)
+
+mesh.lookAt(viewer.camera.position);
+mesh.frustumCulled=false;
+mesh.renderOrder = 0;
+
+// add the image to the scene
+//viewer.scene.add(mesh);
+
+viewer.panorama.add(mesh);
+mesh.position.set(4466.25*-0.9, 668.75*0.9, -2126.97*0.9);
+mesh.lookAt(viewer.camera.position);
+
 */
